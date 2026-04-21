@@ -13,7 +13,7 @@
 
 set -eo pipefail
 
-THRESHOLD="${FRESH_SESH_THRESHOLD:-150000}"
+THRESHOLD="${FRESH_SESH_THRESHOLD:-180000}"
 
 input="$(cat)"
 [ -z "$input" ] && exit 0

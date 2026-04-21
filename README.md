@@ -6,7 +6,7 @@ Three pieces, one install:
 
 - **`/fresh-sesh`** — summarizes the current session (current task, open todos, files in play, open questions, recent context) and writes it to a handoff file in the project's CC folder.
 - **`/next`** — reads the handoff after a `/clear` and picks up where the previous session left off.
-- **Stop hook** — watches context usage every turn; when total input+cache tokens cross ~150k on a 1M-context model (opus 4.6 `[1m]`, opus 4.7 `[1m]`), prints a warning suggesting `/fresh-sesh` or `/clear`.
+- **Stop hook** — watches context usage every turn; when total input+cache tokens cross ~180k on a 1M-context model (opus 4.6 `[1m]`, opus 4.7 `[1m]`), prints a warning suggesting `/fresh-sesh` or `/clear`.
 
 ## Why
 
@@ -82,7 +82,7 @@ If no handoff exists for the current project, `/next` tells you and stops.
 
 ## Configuration
 
-Set a custom threshold (default 150k) via env var in your `~/.claude/settings.json`:
+Set a custom threshold (default 180k) via env var in your `~/.claude/settings.json`:
 
 ```json
 {
