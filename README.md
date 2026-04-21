@@ -14,7 +14,27 @@ Claude Code sessions on 1M-context Opus models stay sharp until roughly 200k tok
 
 ## Install
 
-Add this to `~/.claude/settings.json`:
+### Requirements
+
+- `jq` on `$PATH` (used by the Stop hook). macOS: `brew install jq`. Linux: `apt install jq` / `dnf install jq`.
+- Claude Code with plugin support enabled.
+
+### Option A — Slash commands (recommended)
+
+Inside any Claude Code session, run:
+
+```
+/plugin marketplace add jexmarc/fresh-sesh
+/plugin install fresh-sesh@jexmarc
+```
+
+The first command registers the marketplace hosted in this repo; the second installs and enables the `fresh-sesh` plugin from it. Skills (`/fresh-sesh`, `/next`) and the Stop hook register automatically — no `/hooks` dance required.
+
+If the Stop hook doesn't fire on the next turn, fully quit and relaunch Claude Code once so the hook registry picks up the new plugin.
+
+### Option B — Declarative (settings.json)
+
+Add this to `~/.claude/settings.json` for an auto-enabled install across every session:
 
 ```json
 {
@@ -32,13 +52,19 @@ Add this to `~/.claude/settings.json`:
 }
 ```
 
-Restart Claude Code (or open `/hooks` once) so the Stop hook registers.
+Start (or restart) Claude Code — the marketplace is fetched, the plugin is enabled, and the Stop hook is registered on launch.
 
-**Private repo?** Claude Code uses your `gh` / SSH auth to clone. Make sure `gh auth status` is green on each machine.
+### Verify the install
 
-## Requirements
+```
+/plugin list
+```
 
-- `jq` on `$PATH` (used by the Stop hook). macOS: `brew install jq`. Linux: `apt install jq` / `dnf install jq`.
+You should see `fresh-sesh@jexmarc` listed as enabled. In a session, typing `/fr` should tab-complete `/fresh-sesh`, and the Stop hook will start silently watching context usage every turn.
+
+### Private repo note
+
+Claude Code clones the marketplace repo using your local `gh` / SSH credentials. If the repo is private, make sure `gh auth status` is green (or your SSH key for `github.com` is loaded) on each machine you install from.
 
 ## Usage
 
