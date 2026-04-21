@@ -10,7 +10,7 @@
       "name": "fresh-sesh",
       "source": "./",
       "description": "Checkpoint and resume Claude Code sessions with /fresh-sesh, /next, and a context-girth warning hook.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }
