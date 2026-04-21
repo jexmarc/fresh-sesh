@@ -1,0 +1,16 @@
+{
+  "name": "jexmarc",
+  "owner": {
+    "name": "Marc Gallagher",
+    "email": "marc@bitfree.io",
+    "url": "https://github.com/jexmarc"
+  },
+  "plugins": [
+    {
+      "name": "fresh-sesh",
+      "source": "./",
+      "description": "Checkpoint and resume Claude Code sessions with /fresh-sesh, /next, and a context-girth warning hook.",
+      "version": "0.1.0"
+    }
+  ]
+}
