@@ -11,6 +11,17 @@
       "source": "./",
       "description": "Checkpoint and resume Claude Code sessions with /fresh-sesh, /next, and a context-girth warning hook.",
       "version": "0.3.0"
+    },
+    {
+      "name": "daily-ai-summary",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jexmarc/daily-ai-summary.git",
+        "sha": "aafd48afe3268e2c5a1588341caf0ad1c86a3a24"
+      },
+      "description": "Auto-generate daily summaries of your AI work (Claude Code + Codex sessions) and drop them into an Obsidian vault. Adds /daily-ai-summary with run, configure, install, uninstall, status subcommands.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jexmarc/daily-ai-summary"
     }
   ]
 }
