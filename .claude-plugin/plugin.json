@@ -1,6 +1,6 @@
 {
   "name": "fresh-sesh",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Checkpoint and resume Claude Code sessions. Adds /fresh-sesh to summarize the current session to disk, /next to resume from the handoff, and a Stop hook that warns when context usage gets large on 1M-token models.",
   "author": {
     "name": "Marc Gallagher",
